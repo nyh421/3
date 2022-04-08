@@ -1,9 +1,10 @@
 <div>
-  <p><%= image_tag "no_image.jpg" %></p>
+  <p><%= image_tag @book.user.get_profile_image %></p>
   <p><%= @book.user.name %></p>
   <p><%= @book.title %></p>
   <p><%= @book.body %></p>
   <% if @book.user == current_user %>
-    <%= link_to "Destroy", book_path(@book), method: :delete %>
+    <%= link_to "Edit", edit_book_path(@book.id)%>
+    <%= link_to "Destroy", book_path(@book.id), method: :delete %>
   <% end %>
 </div>
