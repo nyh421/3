@@ -14,7 +14,9 @@
   <%= link_to user_path(book.user.id) do %>
     <%= image_tag book.user.get_profile_image %>
   <% end %>
-  <p>Title:<%= book.title %></p>
+  <%= link_to book_path(book.id) do %>
+    <p>Title:<%= book.title %></p>
+  <% end %>
   <p>Opinio:n<%= book.body %></p>
 </div>
 <% end %>
